@@ -3,10 +3,12 @@ import './App.css';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { Router } from "@reach/router"
 
-import { useQuery } from "@apollo/client"
-import { EPISODES } from "./utils/queries"
+// import { useQuery } from "@apollo/client"
+// import { EPISODES } from "./utils/queries"
 
 import EpisodeList from "../src/components/episodes"
+import CharacterList from "../src/components/characters"
+import LocationList from "../src/components/locations"
 
 
 
@@ -21,8 +23,8 @@ function App() {
       <header className="App-header">
         <Router>
           <EpisodeList path="/episodes" />
-          {/* <Characters path="/characters" />
-          <Locations path="/locations" /> */}
+          <CharacterList path="/characters" />
+          <LocationList path="/locations" />
         </Router>
         <p>
           Stuff goes here
