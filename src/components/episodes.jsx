@@ -7,4 +7,11 @@ class EpisodeList extends React.Component {
     componentDidMount() {
 
     }
+    render() {
+        return (
+            <h1>Episodes</h1>
+        )
+    }
 }
+
+export default EpisodeList
