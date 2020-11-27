@@ -7,7 +7,7 @@ const EpisodeList = () => {
     // This uses the query in utils to GET all the episodes
     const [page, setPage] = useState(1);
     const { loading, data } = useQuery(EPISODES, {
-        variables: { page: page }
+        variables: { page }
     });
 
 

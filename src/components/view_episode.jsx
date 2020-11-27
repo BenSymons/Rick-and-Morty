@@ -21,7 +21,7 @@ const ViewEpisode = (props) => {
         {/* this map will return a list of all characters featured in the episode */}
         {episode.characters.map(character => {
             return <section>
-                <li>
+                <li key={character.name}>
                     <h3>{character.name}</h3>
                     <p>status: {character.status}</p>
                     <p>species: {character.species}</p>

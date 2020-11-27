@@ -29,7 +29,7 @@ query get_episodes ($page: Int!) {
 `
 
 export const EPISODE = gql`
-query getepisode ($id:ID!) {
+query get_episode ($id:ID!) {
   episode(id: $id){
   name
   air_date
@@ -46,11 +46,16 @@ query getepisode ($id:ID!) {
 // Characters query
 
 export const CHARACTERS = gql`
-query{characters{
+query get_characters ($page: Int!){
+  characters(page: $page){
+  info{
+    pages
+  }
   results{
     name
     status
     species
+    image
     location{
       name
     }

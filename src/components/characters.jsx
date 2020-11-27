@@ -1,10 +1,13 @@
-import React from "react"
+import React, { useState } from "react"
 import { useQuery } from "@apollo/client"
 import { CHARACTERS } from "../utils/queries"
 
 const CharacterList = () => {
     // This uses the query in utils to GET all the characters
-    const { loading, data } = useQuery(CHARACTERS);
+    const [page, setPage] = useState(1);
+    const { loading, data } = useQuery(CHARACTERS, {
+        variables: { page }
+    });
 
     if (loading) return <p>loading...</p>
 
@@ -14,9 +17,14 @@ const CharacterList = () => {
     return (
         <>
             <h1>Characters</h1>
+            {/* Buttons to navigate pages */}
+            <button onClick={() => { setPage(page + 1) }}
+                hidden={page < data.characters.info.pages ? false : true}>next</button>
+            <button onClick={() => { setPage(page - 1) }}
+                hidden={page > 1 ? false : true}>prev</button>
             <ul>
                 {characters.map(character => {
-                    return <li key={character.name}>
+                    return <li>
                         <section>
                             <h2>{character.name}</h2>
                             <p>status: {character.status}</p>
