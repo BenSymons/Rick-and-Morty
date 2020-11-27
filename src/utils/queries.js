@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client"
 
-// Episodes query
+// Episode queries
 
 export const EPISODES = gql`
 query{episodes{
@@ -12,6 +12,21 @@ query{episodes{
 }
 }
 `
+
+export const EPISODE = gql`
+query getepisode ($id:ID!) {
+  episode(id: $id){
+  name
+  air_date
+  characters{
+    name
+    status
+    species
+    image
+  }
+}
+}`
+
 
 // Characters query
 

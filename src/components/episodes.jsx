@@ -1,19 +1,19 @@
 import React from "react"
 import { useQuery } from "@apollo/client"
 import { EPISODES } from "../utils/queries"
+import { Link } from "@reach/router"
 
 const EpisodeList = () => {
     // This uses the query in utils to GET all the episodes
     const { loading, data } = useQuery(EPISODES);
 
-    // This variable contains the array of episodes
 
     if (loading) {
         return <p>loading...</p>
     }
-    const episodes = data.episodes.results
-    console.dir(data)
 
+    // This variable contains the array of episodes
+    const episodes = data.episodes.results
 
     return (
         <>
@@ -21,10 +21,12 @@ const EpisodeList = () => {
             <ul>
                 {episodes.map(episode => {
                     return <li key={episode.id}>
-                        <section>
-                            <h2>{episode.name}</h2>
-                            <p>{episode.air_date}</p>
-                        </section>
+                        <Link to={`/episode/${episode.id}`}>
+                            <section>
+                                <h2>{episode.name}</h2>
+                                <p>{episode.air_date}</p>
+                            </section>
+                        </Link>
                     </li>
                 })}
             </ul>

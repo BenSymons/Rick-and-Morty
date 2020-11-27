@@ -6,12 +6,10 @@ const CharacterList = () => {
     // This uses the query in utils to GET all the characters
     const { loading, data } = useQuery(CHARACTERS);
 
-    // This variable contains the array of all the characters
-
     if (loading) return <p>loading...</p>
 
+    // This variable contains the array of all the characters
     const characters = data.characters.results
-    console.dir(characters)
 
     return (
         <>

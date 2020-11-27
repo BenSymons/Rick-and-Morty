@@ -9,6 +9,7 @@ import { Router } from "@reach/router"
 import EpisodeList from "../src/components/episodes"
 import CharacterList from "../src/components/characters"
 import LocationList from "../src/components/locations"
+import ViewEpisode from "../src/components/view_episode"
 
 
 
@@ -25,6 +26,7 @@ function App() {
           <EpisodeList path="/episodes" />
           <CharacterList path="/characters" />
           <LocationList path="/locations" />
+          <ViewEpisode path="/episode/:id"/>
         </Router>
         <p>
           Stuff goes here
