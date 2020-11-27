@@ -2,13 +2,28 @@ import { gql } from "@apollo/client"
 
 // Episode queries
 
+// export const EPISODES = gql`
+// query{episodes{
+//   results{
+//     name
+//     air_date
+//     id
+//   }
+// }
+// }
+// `
+
 export const EPISODES = gql`
-query{episodes{
-  results{
-    name
-    air_date
-    id
-  }
+query get_episodes ($page: Int!) {
+  episodes (page: $page) {
+    info{
+      pages
+    }
+    results{
+      name
+      air_date
+      id
+    }
 }
 }
 `
@@ -36,7 +51,6 @@ query{characters{
     name
     status
     species
-    image
     location{
       name
     }
