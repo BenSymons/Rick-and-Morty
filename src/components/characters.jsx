@@ -19,8 +19,10 @@ const CharacterList = () => {
                     return <li key={character.name}>
                         <section>
                             <h2>{character.name}</h2>
-                            <p>{character.status}</p>
-                            <p>{character.location.name}</p>
+                            <p>status: {character.status}</p>
+                            <p>species: {character.species}</p>
+                            <p>location: {character.location.name}</p>
+                            <img src={character.image} alt={character.name} />
                         </section>
                     </li>
                 })}

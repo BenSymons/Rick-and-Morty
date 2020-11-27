@@ -10,6 +10,8 @@ import EpisodeList from "../src/components/episodes"
 import CharacterList from "../src/components/characters"
 import LocationList from "../src/components/locations"
 import ViewEpisode from "../src/components/view_episode"
+import Home from "../src/components/home"
+import Nav from "../src/components/nav_bar"
 
 
 
@@ -22,7 +24,9 @@ function App() {
     <ApolloProvider client={client}>
     <div className="App">
       <header className="App-header">
+        <Nav/>
         <Router>
+          <Home path="/" />
           <EpisodeList path="/episodes" />
           <CharacterList path="/characters" />
           <LocationList path="/locations" />

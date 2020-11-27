@@ -35,6 +35,8 @@ query{characters{
   results{
     name
     status
+    species
+    image
     location{
       name
     }
