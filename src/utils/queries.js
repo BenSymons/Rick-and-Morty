@@ -54,7 +54,8 @@ query get_characters ($page: Int!, $filter: FilterCharacter){
 // Locations query
 
 export const LOCATIONS = gql`
-query{locations{
+query get_locations ($page: Int!, $filter: FilterLocation){
+  locations(page: $page, filter: $filter) {
   info{
     pages
   }

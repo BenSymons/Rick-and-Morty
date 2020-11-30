@@ -37,7 +37,7 @@ const EpisodeList = () => {
                 hidden={page > 1 ? false : true}>prev</button>
             <div>
                 <input value={search} onChange={onChange}></input>
-                <button onClick={() => { handleClick() }}>search</button>
+                <button onClick={() => { handleClick() }}>search by name</button>
             </div>
             <ul>
                 {episodes.map(episode => {
