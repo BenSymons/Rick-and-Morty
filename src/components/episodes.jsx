@@ -6,13 +6,22 @@ import { Link } from "@reach/router"
 const EpisodeList = () => {
     // This uses the query in utils to GET all the episodes
     const [page, setPage] = useState(1);
+    const [search, setSearch] = useState("");
+    const [filter, setFilter] = useState();
     const { loading, data } = useQuery(EPISODES, {
-        variables: { page }
+        variables: { page, filter }
     });
-
 
     if (loading) {
         return <p>loading...</p>
+    }
+
+    const onChange = (e) => {
+        setSearch(e.target.value)
+    }
+
+    const handleClick = () => {
+        setFilter({ name: search })
     }
 
     // This variable contains the array of episodes
@@ -21,12 +30,15 @@ const EpisodeList = () => {
     return (
         <>
             <h1>Episodes</h1>
-
             {/* Buttons to navigate pages */}
             <button onClick={() => { setPage(page + 1) }}
                 hidden={page < data.episodes.info.pages ? false : true}>next</button>
             <button onClick={() => { setPage(page - 1) }}
                 hidden={page > 1 ? false : true}>prev</button>
+            <div>
+                <input value={search} onChange={onChange}></input>
+                <button onClick={() => { handleClick() }}>search</button>
+            </div>
             <ul>
                 {episodes.map(episode => {
                     return <li key={episode.id}>
