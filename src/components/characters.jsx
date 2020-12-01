@@ -36,9 +36,9 @@ const CharacterList = () => {
                 <input value={search} onChange={onChange}></input>
                 <button onClick={handleClick}>Search</button>
             </div>
-            <ul>
+            <ul className="container">
                 {characters.map(character => {
-                    return <li>
+                    return <li className="card">
                         <section>
                             <h2>{character.name}</h2>
                             <p>status: {character.status}</p>

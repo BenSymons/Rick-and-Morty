@@ -35,9 +35,9 @@ const LocationList = () => {
                 <input value={search} onChange={onChange}></input>
                 <button onClick={handleClick}>Search</button>
             </div>
-            <ul>
+            <ul className="container">
                 {locations.map(location => {
-                    return <li key={location.name}>
+                    return <li className="card" key={location.name}>
                         <section>
                             <h2>{location.name}</h2>
                         </section>

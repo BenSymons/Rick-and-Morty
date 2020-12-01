@@ -39,10 +39,10 @@ const EpisodeList = () => {
                 <input value={search} onChange={onChange}></input>
                 <button onClick={() => { handleClick() }}>search by name</button>
             </div>
-            <ul>
+            <ul className="container" >
                 {episodes.map(episode => {
-                    return <li key={episode.id}>
-                        <Link to={`/episode/${episode.id}`}>
+                    return <li className="card" key={episode.id}>
+                        <Link className="link" to={`/episode/${episode.id}`}>
                             <section>
                                 <h2>{episode.name}</h2>
                                 <p>{episode.air_date}</p>
