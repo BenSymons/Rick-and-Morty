@@ -16,15 +16,17 @@ const ViewEpisode = (props) => {
     const episode = data.episode
     return <>
         <h1>{episode.name}</h1>
-        <p>air date: {episode.air_date}</p>
+        <p className="sub-heading">air date: {episode.air_date}</p>
         <h2>characters</h2>
         {/* this map will return a list of all characters featured in the episode */}
         {episode.characters.map(character => {
             return <section>
-                <li key={character.name}>
-                    <h3>{character.name}</h3>
-                    <p>status: {character.status}</p>
-                    <p>species: {character.species}</p>
+                <li key={character.name} className="card clearfix">
+                    <section className="content">
+                        <h3>{character.name}</h3>
+                        <p>status: {character.status}</p>
+                        <p>species: {character.species}</p>
+                    </section>
                     <img src={character.image} alt={character.name} />
                 </li>
             </section>

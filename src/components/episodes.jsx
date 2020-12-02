@@ -31,11 +31,14 @@ const EpisodeList = () => {
         <>
             <h1>Episodes</h1>
             {/* Buttons to navigate pages */}
-            <button onClick={() => { setPage(page + 1) }}
-                hidden={page < data.episodes.info.pages ? false : true}>next</button>
-            <button onClick={() => { setPage(page - 1) }}
-                hidden={page > 1 ? false : true}>prev</button>
-            <div>
+            <section className="pages">
+                <button onClick={() => { setPage(page - 1) }}
+                    hidden={page > 1 ? false : true}>prev</button>
+                <p className="pageno">{page}</p>
+                <button onClick={() => { setPage(page + 1) }}
+                    hidden={page < data.episodes.info.pages ? false : true}>next</button>
+            </section>
+            <div className="search-bar">
                 <input value={search} onChange={onChange}></input>
                 <button onClick={() => { handleClick() }}>search by name</button>
             </div>
@@ -45,7 +48,7 @@ const EpisodeList = () => {
                         <Link className="link" to={`/episode/${episode.id}`}>
                             <section>
                                 <h2>{episode.name}</h2>
-                                <p>{episode.air_date}</p>
+                                <p>Air date: {episode.air_date}</p>
                             </section>
                         </Link>
                     </li>
