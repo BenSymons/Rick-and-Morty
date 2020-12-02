@@ -1,3 +1,34 @@
+## My Rick and Morty react app
+
+Welcome to my react app that I made for the sci-fi comedy animation Rick and Morty! Here I've used an API with a graphQL endpoint to show the episodes, characters and locations involved with the series. Feel free to clone and have a look for yourself
+
+# How to use
+
+Installation- first, you will need to clone this repository. To do this, go to a location that you'd like to download it to using the command line, then use 'git clone' followed by the link for this repository.
+
+If you're not used to using github as much, simply paste the following command into your command line:
+
+git clone https://github.com/BenSymons/Rick-and-Morty.git
+
+After you have done that, open the repository in VS code or whichever editor you prefer to use. You'll need to download all the dependencies before you can use it. These are just the libraries that I've downloaded that is needed to run it. To do this just type:
+
+npm install
+
+into your terminal. This should take less than a minute.
+
+After that, type:
+
+npm start
+
+into your terminal to launch the app. This should open up in a new webpage in your browser. That's it! Use the nav bar at the top to navigate and I hope you enjoy my app.
+
+# Credits
+
+This project- Ben Symons
+
+Rick and Morty API- Axel Fuhrmann
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
