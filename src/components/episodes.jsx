@@ -38,6 +38,7 @@ const EpisodeList = () => {
                 <button onClick={() => { setPage(page + 1) }}
                     hidden={page < data.episodes.info.pages ? false : true}>next</button>
             </section>
+            {/* Search bar */}
             <div className="search-bar">
                 <input value={search} onChange={onChange}></input>
                 <button onClick={() => { handleClick() }}>search by name</button>

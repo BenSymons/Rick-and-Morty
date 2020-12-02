@@ -35,6 +35,7 @@ const CharacterList = () => {
                 <button onClick={() => { setPage(page + 1) }}
                     hidden={page < data.characters.info.pages ? false : true}>next</button>
             </section>
+            {/* Search bar */}
             <div className="search-bar">
                 <input value={search} onChange={onChange}></input>
                 <button onClick={handleClick}>Search</button>

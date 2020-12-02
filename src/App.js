@@ -12,6 +12,8 @@ import Home from "../src/components/home"
 import Nav from "../src/components/nav_bar"
 import Footer from "../src/components/footer"
 
+
+// App
 function App() {
   const client = new ApolloClient({
     uri: 'https://rickandmortyapi.com/graphql/',

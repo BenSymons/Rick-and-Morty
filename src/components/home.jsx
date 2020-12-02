@@ -8,7 +8,8 @@ const home = () => {
         and locations.
         Want to see who stars in each episode? No problem! Just click on
         the episode you want and it will show you a list of all the starring characters.
-        You can also see a list of characters by themselves where you can find out what species they are, and whether they are dead or alive
+        You can also see a list of characters by themselves where you can find out what species they are,
+        and whether they are dead or alive.
         </p>
     </div>
         <img id="Rick-and-Morty" src="https://static.businessinsider.com/image/55afe6b12acae711008b8f88/image.jpg" alt="Rick and Morty" />
